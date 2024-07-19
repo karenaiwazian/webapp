@@ -1,0 +1,7 @@
+let score = document.querySelector('.user-score')
+
+document.querySelector("button").addEventListener('click', () => {
+    score.innerHTML++
+})
+
+let tg = window.Telegram.WebApp
