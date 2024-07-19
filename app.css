@@ -1,10 +1,10 @@
 :root {
-    --bg-color: var(--tg-theme-bg-color)
-    --text-color: var(--tg-theme-text-color)
-    --hint-color: var(--tg-theme-hint-color)
-    --link-color: var(--tg-theme-link-color)
-    --button-color: var(--tg-theme-button-color)
-    --button-text-color: var(--tg-theme-button-text-color)
+    --bg-color: var(--tg-theme-bg-color);
+    --text-color: var(--tg-theme-text-color);
+    --hint-color: var(--tg-theme-hint-color);
+    --link-color: var(--tg-theme-link-color);
+    --button-color: var(--tg-theme-button-color);
+    --button-text-color: var(--tg-theme-button-text-color);
 }
 
 * {
