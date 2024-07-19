@@ -28,6 +28,13 @@ h1, .user-score {
     color: var(--text-color);
 }
 
+.btn {
+    border: none;
+    border-radius: 1rem;
+    color: var(--button-text-color);
+    background: var(--button-color);
+}
+
 .user-score {
     font-size: 1rem;
 }
