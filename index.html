@@ -4,23 +4,27 @@
     <meta charset="UTF-8">
     <title>Заголовок страницы</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="app.css">
 </head>
 <body>
     <h1>TONLICKER</h1>
     <div class="user-score">0</div>
     <button class="user-tap-button"></button>
+    <section>
     <input type="text" placeholder="ФИО">
     <input type="text" placeholder="">
     <input type="text">
+    </section>
     <a href="#">link</a>
     <p>hint</p>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
-        let score = document.querySelector('.user-score');
-        document.querySelector('.user-tap-button').addEventListener('click', () => {
-            score.innerHTML++
-        })
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = `app.css?v=${Math.random()}`
+        document.querySelector('head').appendChild(link)
+        const script = document.createElement('script')
+        script.src = `app.js?v=${Math.random()}`
+        document.querySelector('head').appendChild(script)
     </script>
 </body>
 </html>
