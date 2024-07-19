@@ -11,6 +11,8 @@
 * {
     margin: 0;
     padding: 0;
+    font-size: 16px;
+    outline: none;
 }
 
 body {
@@ -49,6 +51,7 @@ section {
     display: flex;
     flex-direction: column;
     padding: 1rem;
+    margin: 1rem;
     background: var(--section-bg-color);
 }
 
