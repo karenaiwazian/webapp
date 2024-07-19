@@ -1,4 +1,18 @@
 :root {
+    --bg-color: white;
+    --secondary-bg-color: gray;
+    --text-color: black;
+    --hint-color: gray;
+    --link-color: blue;
+    --button-color: blue;
+    --button-text-color: lightblue;
+    --section-bg-color: white;
+    --section-separator-color: gray;
+    --destructive-text-color: red;
+}
+
+[data-theme="light"],
+[data-theme="dark"] {
     --bg-color: var(--tg-theme-bg-color);
     --secondary-bg-color: var(--tg-theme-secondary-bg-color);
     --text-color: var(--tg-theme-text-color);
@@ -24,31 +38,33 @@ body {
     background: var(--secondary-bg-color);
 }
 
-h1, .user-score {
-    text-align: center;
-    color: var(--text-color);
+.diplom-preview {
+    width: 100%;
+    overflow: hidden;
+    background: var(--bg-color);
+}
+
+.diplom-preview .img-container {
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem;
+}
+
+.diplom-preview .img-container img {
+    width: 200px;
+    height: 250px;
 }
 
 .btn {
-    padding: .4rem .8rem;
     border: none;
     border-radius: 1rem;
+    padding: .4rem .8rem;
     color: var(--button-text-color);
     background: var(--button-color);
-}
-
-.user-score {
-    font-size: 1rem;
-}
-
-.user-tap-button {
-    margin-inline: auto;
-    width: 100px;
-    height: 100px;
-    border: none;
-    border-radius: 100px;
-    background: url('TON.png');
-    background-size: 100% 100%;
+    border: 1px solid;
 }
 
 a {
@@ -71,18 +87,15 @@ hr {
 section {
     display: flex;
     flex-direction: column;
-    padding: 1rem;
-    margin: 1rem;
     border-radius: 1rem;
+    margin: 1rem;
+    padding: 1rem;
     background: var(--section-bg-color);
 }
 
 section input {
-    padding: .4rem .8rem;
     border: 1px solid;
     border-radius: 1rem;
-}
-
-section input:not(:last-child) {
+    padding: .4rem .8rem;
     margin-bottom: 1rem;
 }
