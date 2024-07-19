@@ -19,13 +19,16 @@
     <p class="destructive-text-color">remove</p>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
-        const link = document.createElement('link')
-        link.rel = 'stylesheet'
-        link.href = `app.css?v=${Math.random()}`
-        document.querySelector('head').appendChild(link)
-        const script = document.createElement('script')
-        script.src = `app.js?v=${Math.random()}`
-        document.querySelector('head').appendChild(script)
+        Awake()
+        function Awake() {
+            const link = document.createElement('link')
+            link.rel = 'stylesheet'
+            link.href = `app.css?v=${Math.random()}`
+            document.querySelector('head').appendChild(link)
+            const script = document.createElement('script')
+            script.src = `app.js?v=${Math.random()}`
+            document.querySelector('head').appendChild(script)
+        }
     </script>
 </body>
 </html>
