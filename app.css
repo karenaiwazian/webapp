@@ -7,6 +7,7 @@
     --button-color: var(--tg-theme-button-color);
     --button-text-color: var(--tg-theme-button-text-color);
     --section-bg-color: var(--tg-theme-section-bg-color);
+    --section-separator-color: var(--tg-theme-section-separator-color);
     --destructive-text-color: var(--tg-theme-destructive-text-color);
 }
 
@@ -51,6 +52,11 @@ h1, .user-score {
 
 a {
     color: var(--link-color);
+}
+
+hr {
+    border-color: var(--section-separator-color1);
+    margin-block: 1rem;
 }
 
 .hint {
