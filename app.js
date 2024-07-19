@@ -1,11 +1,21 @@
 let score = document.querySelector('.user-score')
+let tg = window.Telegram.WebApp
+let active = false
 
 document.querySelector("button").addEventListener('click', () => {
     score.innerHTML++
+    backbut()
 })
 
-let tg = window.Telegram.WebApp
+function backbut() {
+    if (active) {
+        tg.BackButton.hide()
+        active = false
+    } else {
+        tg.BackButton.show()
+        active = true
+    }
+}
 
-tg.BackButton.show()
 tg.MainButton.hide()
 tg.SettingsButton.show()
