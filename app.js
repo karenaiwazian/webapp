@@ -5,7 +5,7 @@ document.querySelector("button").addEventListener('click', () => {
     backbut()
 })
 
-document.querySelector("html").setAttribute("data-thee", tg.colorScheme)
+document.querySelector("html").setAttribute("data-theme", tg.colorScheme)
 
 function backbut() {
     if (active) {
