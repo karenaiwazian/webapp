@@ -26,7 +26,7 @@ document.querySelector("input[name='username']").addEventListener("input", (e) =
         tg.MainButton.showProgress(true)
         setTimeout(() => {
             tg.MainButton.hideProgress()
-            tg.MainButton.text = "CONTINUE"
+            tg.MainButton.text = "continue"
         }, 2000)
     }
 })
