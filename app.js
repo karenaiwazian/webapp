@@ -25,6 +25,6 @@ document.querySelector("input[name='username']").addEventListener("input", (e) =
         tg.MainButton.showProgress(true)
         setTimeout(() => {
             tg.MainButton.hideProgress()
-        })
+        }, 2000)
     }
 })
