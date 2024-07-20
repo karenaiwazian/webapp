@@ -97,5 +97,8 @@ section input {
     border: 1px solid;
     border-radius: 1rem;
     padding: .4rem .8rem;
-    margin-bottom: 1rem;
 }
+
+section input:not(:last-child) {
+    margin-bottom: 1rem;
+    }
