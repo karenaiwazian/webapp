@@ -4,7 +4,9 @@ let active = false
 document.querySelector("button").addEventListener('click', () => {
     backbut()
 })
-document.querySelector('html').setAttribute("data-theme", tg.colorScheme)
+
+document.querySelector("html").setAttribute("data-thee", tg.colorScheme)
+
 function backbut() {
     if (active) {
         tg.BackButton.hide()
@@ -15,5 +17,10 @@ function backbut() {
     }
 }
 
-tg.MainButton.show()
-tg.SettingsButton.show()
+document.querySelector("input[name='username']").addEventListener("input", (e) => {
+    if (e.target.value.length <= 0) {
+        tg.MainButton.hide()
+    } else {
+        tg.MainButton.show()
+    }
+})
