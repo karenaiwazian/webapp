@@ -16,13 +16,13 @@ function backbut() {
         active = true
     }
 }
-
+tg.MainButton.text = "first"
 document.querySelector("input[name='username']").addEventListener("input", (e) => {
     if (e.target.value.length <= 0) {
         tg.MainButton.hide()
     } else {
         tg.MainButton.show()
-        tg.MainButton.text = ""
+        tg.MainButton.text = "change"
         tg.MainButton.showProgress(true)
         setTimeout(() => {
             tg.MainButton.hideProgress()
