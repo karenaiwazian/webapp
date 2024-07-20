@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" data-theme="">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Заголовок страницы</title>
@@ -16,8 +16,19 @@
         </div>
     </div>
     <section>
-        <input type="text" placeholder="ФИО"> 
-        <input>
+        <div class="input-group">
+            <input type="radio" name="dip" id="diplom" checked>
+            <label for="diplom">Диплом</label>
+        </div>
+        <div class="input-group">
+            <input type="radio" name="dip" id="sert">
+            <label for="sert">Сертификат</label>
+        </div>
+        <div class="input-group">
+            <input type="radio" name="dip" id="charter">
+            <label for="charter">Грамота</label>
+        </div>
+        <input type="text" name="username" placeholder="ФИО">
     </section>
     <button class="btn">Дальше</button>      
     <hr>
