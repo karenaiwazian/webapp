@@ -22,5 +22,9 @@ document.querySelector("input[name='username']").addEventListener("input", (e) =
         tg.MainButton.hide()
     } else {
         tg.MainButton.show()
+        tg.MainButton.showProgress(true)
+        setTimeout(() => {
+            tg.MainButton.hideProgress()
+        })
     }
 })
