@@ -22,9 +22,11 @@ document.querySelector("input[name='username']").addEventListener("input", (e) =
         tg.MainButton.hide()
     } else {
         tg.MainButton.show()
+        tg.MainButton.text = ""
         tg.MainButton.showProgress(true)
         setTimeout(() => {
             tg.MainButton.hideProgress()
+            tg.MainButton.text = "CONTINUE"
         }, 2000)
     }
 })
