@@ -1,34 +1,24 @@
-let tg = window.Telegram.WebApp
-let active = false
+const imgContainer = document.querySelector(".img-container")
 
-document.querySelector("button").addEventListener('click', () => {
-    backbut()
-})
+function createImg(url) {
+    const img = document.createElement("div")
+    img.className = "img"
+    img.style.backgroundImage = `url('${url}')`
+    
+    const name = document.createElement("div")
+    name.className = "name"
 
-document.querySelector("html").setAttribute("data-theme", tg.colorScheme)
-
-function backbut() {
-    if (active) {
-        tg.BackButton.hide()
-        active = false
-    } else {
-        tg.BackButton.show()
-        active = true
-    }
+    img.appendChild(name)
+    imgContainer.appendChild(img)
 }
 
+createImg("ton.png")
+createImg("ton.png")
+createImg("ton.png")
+
 document.querySelector("input[name='username']").addEventListener("input", (e) => {
-    if (e.target.value.length <= 0) {
-        tg.MainButton.hide()
-    } else {
-        tg.MainButton.show()
-        tg.MainButton.text = "Подождите"
-        tg.MainButton.disable()
-        tg.MainButton.showProgress(true)
-        setTimeout(() => {
-            tg.MainButton.hideProgress()
-            tg.MainButton.text = "continue"
-            tg.MainButton.enable()
-        }, 2000)
-    }
+    let text = e.target.value
+    document.querySelectorAll("div.name").forEach(name => {
+        name.innerText = text  
+    })
 })
