@@ -1,4 +1,4 @@
-:root {
+/*:root {
     --bg-color: white;
     --secondary-bg-color: gray;
     --text-color: black;
@@ -9,7 +9,7 @@
     --section-bg-color: white;
     --section-separator-color: gray;
     --destructive-text-color: red;
-}
+}*/
 
 [data-theme="light"],
 [data-theme="dark"] {
