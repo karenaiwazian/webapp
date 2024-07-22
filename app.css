@@ -11,8 +11,7 @@
     --destructive-text-color: red;
 }*/
 
-[data-theme="light"],
-[data-theme="dark"] {
+:root {
     --bg-color: var(--tg-theme-bg-color);
     --secondary-bg-color: var(--tg-theme-secondary-bg-color);
     --text-color: var(--tg-theme-text-color);
