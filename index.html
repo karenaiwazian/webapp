@@ -2,17 +2,12 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Заголовок страницы</title>
+    <title>Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 </head>
 <body>
     <div class="diplom-preview">
         <div class="img-container">
-            <img src="">
-            <img src="">
-            <img src="">
-            <img src="">
-            <img src="">
         </div>
     </div>
     <section>
@@ -21,20 +16,30 @@
             <label for="diplom">Диплом</label>
         </div>
         <div class="input-group">
+            <input type="radio" name="dip" id="charter">
+            <label for="charter">Грамота</label>
+        </div>
+        <div class="input-group">
             <input type="radio" name="dip" id="sert">
             <label for="sert">Сертификат</label>
         </div>
         <div class="input-group">
-            <input type="radio" name="dip" id="charter">
-            <label for="charter">Грамота</label>
+            <input type="text" name="username" placeholder="Фамилия Имя Отчество">
         </div>
-        <input type="text" name="username" placeholder="ФИО">
-    </section>
-    <button class="btn">Дальше</button>      
+        <div class="input-group">
+            <select>
+                <option>Чемпионат мира</option>
+                <option>Чемпионат вселенной</option>
+                <option>Чемпионат галактики</option>
+            </select>
+        </div>
+        <select>
+            <option>1 место</option>
+            <option>2 место</option>
+            <option>3 место</option>
+        </select>
+    </section>  
     <hr>
-    <a href="#">link</a>
-    <p class="hint">hint</p>
-    <p class="destructive-text-color">remove</p>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
         Awake()
