@@ -130,6 +130,7 @@ section {
 
 section input[type="text"] {
     width: 100%;
+    color: var(--text-color);
     border: 1px solid;
     border-radius: .6rem;
     padding: .4rem .8rem;
@@ -151,6 +152,8 @@ select {
     border-color: var(--hint-color);
     border-radius: .6rem;
     padding: .4rem .8rem;
+    background: transparent;
+    color: var(--text-color);
 }
 
 label {
