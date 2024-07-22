@@ -31,16 +31,19 @@
     font-size: 16px;
     outline: none;
     user-select: none;
+    box-sizing: border-box;
+    font-family: sanf-serif;
 }
 
 body {
-    text-align:center;
     background: var(--secondary-bg-color);
 }
 
 .diplom-preview {
     width: 100%;
     overflow: hidden;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
     background: var(--bg-color);
 }
 
@@ -48,14 +51,47 @@ body {
     overflow-y: scroll;
     display: flex;
     flex-direction: row;
-    align-items: center;
-    gap: 1rem;
-    margin: 1rem;
+    gap: .2rem;
+    padding: 1rem 7rem;
+    scroll-snap-type: x mandatory;
 }
 
-.diplom-preview .img-container img {
-    width: 200px;
-    height: 250px;
+.diplom-preview .img-container::-webkit-scrollbar{
+    display: none;
+}
+
+.diplom-preview .img-container div.img {
+    position: relative;
+    width: 250px;
+    height: 350px;
+    flex-shrink: 0;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    animation: imanim linear;
+    animation-timeline: view(x);
+    scale: .8;
+    border-radius: .5rem;
+    background-position: center;
+    background-size: cover;
+}
+
+.diplom-preview .img-container div.img div.name {
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    text-align: center;
+}
+
+@keyframes imanim {
+    10% {
+        scale: .8;
+    }
+    50% {
+        scale: 1;
+    }
+    90% {
+        scale: .8;
+    }
 }
 
 .btn {
@@ -93,14 +129,31 @@ section {
     background: var(--section-bg-color);
 }
 
-section input {
+section input[type="text"] {
+    width: 100%;
     border: 1px solid;
-    border-radius: 1rem;
+    border-radius: .6rem;
     padding: .4rem .8rem;
     background: transparent;
     border-color: var(--hint-color);
 }
 
+.input-group {
+    width: 100%;
+}
+
 .input-group:not(:last-child) {
     margin-bottom: 1rem;
+}
+
+select {
+    width: 100%;
+    border: 1px solid;
+    border-color: var(--hint-color);
+    border-radius: .6rem;
+    padding: .4rem .8rem;
+}
+
+label {
+    color: var(--text-color);
 }
