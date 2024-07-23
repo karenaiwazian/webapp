@@ -45,8 +45,16 @@ document.querySelectorAll("button[data-modal]").forEach(button => {
             modal.close()
             document.removeEventListener("click", closeModal)
         }
+        window.Telegram.WebApp.showPopup({
+    title: "Подтверждение",
+    message: "Вы уверены, что хотите продолжить?",
+    buttons: [
+        {text: "Да", type: "ok"},
+        {text: "Нет", type: "cancel"}
+    ]
+})
     })
 })
 
 let tg = window.Telegram.WebApp
-tg.showPopup({title: "title", message: "<input type='text'>", buttons: [{type:"Cansel"}]})
+document.body.innerHTML += tg.ThemeParams
