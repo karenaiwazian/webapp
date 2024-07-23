@@ -6,6 +6,7 @@
     --link-color: var(--tg-theme-link-color);
     --button-color: var(--tg-theme-button-color);
     --button-text-color: var(--tg-theme-button-text-color);
+    --accent-text-color: var(--tg-theme-accent-text-color);
     --section-bg-color: var(--tg-theme-section-bg-color);
     --section-separator-color: var(--tg-theme-section-separator-color);
     --destructive-text-color: var(--tg-theme-destructive-text-color);
@@ -178,11 +179,11 @@ dialog div.content button {
     border: none;
     border-radius: .5rem;
     padding: .4rem .8rem;
-    color: var(--button-text-color);
+    color: var(--accent-text-color);
     background: transparent;
     transition: .3s;
 }
 
 dialog div.content button:active {
-    background: var(--button-color);
+    background-color: color-mix(in srgb, var(--accent-text-color) 25%, transparent);
 }
