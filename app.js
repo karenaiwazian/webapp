@@ -18,7 +18,25 @@ createImg("ton.png")
 
 document.querySelector("input[name='username']").addEventListener("input", (e) => {
     let text = e.target.value
-    document.querySelectorAll("div.name").forEach(name => {
-        name.innerText = text  
+document.querySelectorAll("div.name").forEach(name => {
+      name.innerText = text  
+    })
+})
+
+document.querySelectorAll("button[data-modal]").forEach(button => {
+    button.addEventListener("click", (e) => {
+        const modalId = e.target.getAttribute("data-modal")
+        const modal = document.getElementById(modalId)
+        const closeBtn = modal.querySelector("button")
+    
+        modal.showModal()
+        modal.addEventListener("click", closeModal)
+        closeBtn.addEventListener("click", closeModal)
+        
+        function closeModal() {
+            modal.close()
+            modal.removeEventListener("click", closeModal)
+            closeBtn.removeEventListener("click", closeModal)
+        }
     })
 })
