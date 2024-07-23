@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" date-theme="light">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -33,12 +33,25 @@
                 <option>Чемпионат галактики</option>
             </select>
         </div>
-        <select>
-            <option>1 место</option>
-            <option>2 место</option>
-            <option>3 место</option>
-        </select>
-    </section>  
+        <button class="btn" data-modal="pop">1 место</button>
+    </section>
+    <dialog id="pop">
+        <div class="input-group"> 
+            <input type="radio" id="firstseet" name="seet" checked>
+            <label for="firstseet">1 место</label>
+        </div>
+        <div class="input-group">
+            <input type="radio" id="secondseet" name="seet">
+            <label for="secondseet">2 место</label>
+        </div>
+        <div class="input-group">
+            <input type="radio" id="thirdseet" name="seet">
+            <label for="thirdseet">3 место</label>
+        </div>
+        <div>
+            <button>отмена</button>
+        </div>
+    </dialog>
     <hr>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
