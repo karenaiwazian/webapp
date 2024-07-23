@@ -1,16 +1,3 @@
-/*:root {
-    --bg-color: white;
-    --secondary-bg-color: gray;
-    --text-color: black;
-    --hint-color: gray;
-    --link-color: blue;
-    --button-color: blue;
-    --button-text-color: lightblue;
-    --section-bg-color: white;
-    --section-separator-color: gray;
-    --destructive-text-color: red;
-}*/
-
 :root {
     --bg-color: var(--tg-theme-bg-color);
     --secondary-bg-color: var(--tg-theme-secondary-bg-color);
@@ -32,6 +19,10 @@
     user-select: none;
     box-sizing: border-box;
     font-family: sanf-serif;
+}
+
+*::backdrop {
+    background: rgba(0, 0, 0, 50%);
 }
 
 body {
@@ -95,11 +86,10 @@ body {
 
 .btn {
     border: none;
-    border-radius: 1rem;
+    border-radius: .6rem;
     padding: .4rem .8rem;
     color: var(--button-text-color);
     background: var(--button-color);
-    border: 1px solid;
 }
 
 a {
@@ -159,3 +149,28 @@ select {
 label {
     color: var(--text-color);
 }
+
+dialog {
+    position: relative;
+    margin: auto;
+    border-radius: .5rem;
+    border: none;
+    padding: 1rem 1rem 2rem 1rem;
+    min-width: 200px;
+}
+
+dialog button {
+    position: absolute;
+    right: .5rem;
+    bottom: .5rem;
+    border: none;
+    border-radius: .5rem;
+    padding: .4rem .8rem;
+    color: var(--button-text-color);
+    background: transparent;
+    transition: .3s;
+}
+
+dialog button:active {
+    background: var(--button-color);
+    }
