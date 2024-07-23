@@ -27,29 +27,58 @@
             <input type="text" name="username" placeholder="Фамилия Имя Отчество">
         </div>
         <div class="input-group">
-            <select>
-                <option>Чемпионат мира</option>
-                <option>Чемпионат вселенной</option>
-                <option>Чемпионат галактики</option>
-            </select>
+            <button class="btn" data-modal="nomination">Номинация</button>
         </div>
-        <button class="btn" data-modal="pop">1 место</button>
+        <div class="input-group">
+            <button class="btn" data-modal="seet">Место</button>
+        </div>
     </section>
-    <dialog id="pop">
-        <div class="input-group"> 
-            <input type="radio" id="firstseet" name="seet" checked>
-            <label for="firstseet">1 место</label>
+    
+    <dialog id="nomination">
+        <div class="content">
+            <div class="input-group">
+                <input type="radio" id="world" name="nomination" checked>
+                <label for="world">Чемпионат мира</label>
+            </div>
+            <div class="input-group">
+                <input type="radio" id="universe" name="nomination">
+                <label for="universe">Чемпионат вселенной</label>
+            </div>
+            <div class="input-group">
+                <input type="radio" id="galaxy" name="nomination">
+                <label for="galaxy">Чемпионат галактики</label>
+            </div>
+            <div class="input-group">
+                <input type="radio" id="turworld" name="nomination">
+                <label for="turworld">Турнир мира</label>
+            </div>
+            <div class="input-group">
+                <input type="radio" id="turuniverse" name="nomination">
+                <label for="turuniverse">Турнир вселенной</label>
+            </div>
+            <div class="input-group">
+                <input type="radio" id="turgalaxy" name="nomination">
+                <label for="turgalaxy">Турнир галактики</label>
+            </div>
+            <button>Отмена</button>
         </div>
-        <div class="input-group">
-            <input type="radio" id="secondseet" name="seet">
-            <label for="secondseet">2 место</label>
-        </div>
-        <div class="input-group">
-            <input type="radio" id="thirdseet" name="seet">
-            <label for="thirdseet">3 место</label>
-        </div>
-        <div>
-            <button>отмена</button>
+    </dialog>
+    
+    <dialog id="seet">
+        <div class="content">
+            <div class="input-group"> 
+                <input type="radio" id="firstseet" name="seet" checked>
+                <label for="firstseet">1 место</label>
+            </div>
+            <div class="input-group">
+                <input type="radio" id="secondseet" name="seet">
+                <label for="secondseet">2 место</label>
+            </div>
+            <div class="input-group">
+                <input type="radio" id="thirdseet" name="seet">
+                <label for="thirdseet">3 место</label>
+            </div>
+            <button>Отмена</button>
         </div>
     </dialog>
     <hr>
