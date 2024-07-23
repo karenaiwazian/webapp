@@ -49,4 +49,4 @@ document.querySelectorAll("button[data-modal]").forEach(button => {
 })
 
 let tg = window.Telegram.WebApp
-tg.showPopup({title: "title", message: "<input type='text'>", button: [{type:"Cansel"}]})
+tg.showPopup({title: "title", message: "<input type='text'>", buttons: [{type:"Cansel"}]})
