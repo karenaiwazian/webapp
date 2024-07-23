@@ -187,3 +187,7 @@ dialog div.content button {
 dialog div.content button:active {
     background-color: color-mix(in srgb, var(--accent-text-color) 25%, transparent);
 }
+
+input[type="radio"] {
+    accent-color: var(--accent-text-color);
+}
