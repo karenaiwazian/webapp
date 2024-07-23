@@ -24,7 +24,7 @@ document.querySelectorAll("div.name").forEach(name => {
 })
 
 document.querySelectorAll("button[data-modal]").forEach(button => {
-    button.addEventListener("click", (e) => {
+    button.addEventListener("pointerup", (e) => {
         const modalId = e.target.getAttribute("data-modal")
         const modal = document.getElementById(modalId)
         
@@ -34,7 +34,7 @@ document.querySelectorAll("button[data-modal]").forEach(button => {
         cls.push(modal)
         console.log(cls)
         
-        document.addEventListener("click", closeModal)
+        document.addEventListener("pointerup", closeModal)
         
         function closeModal(e) {
             const elem = e.target
@@ -43,7 +43,7 @@ document.querySelectorAll("button[data-modal]").forEach(button => {
                 return
             }
             modal.close()
-            document.removeEventListener("click", closeModal)
+            document.removeEventListener("pointerup", closeModal)
         }
     })
 })
