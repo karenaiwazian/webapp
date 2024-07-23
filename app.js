@@ -27,16 +27,23 @@ document.querySelectorAll("button[data-modal]").forEach(button => {
     button.addEventListener("click", (e) => {
         const modalId = e.target.getAttribute("data-modal")
         const modal = document.getElementById(modalId)
-        const closeBtn = modal.querySelector("button")
-    
-        modal.showModal()
-        modal.addEventListener("click", closeModal)
-        closeBtn.addEventListener("click", closeModal)
         
-        function closeModal() {
+        const closes = modal.querySelectorAll("input[type='radio'], label, button")
+        modal.showModal()
+        const cls = Array.from(closes)
+        cls.push(modal)
+        console.log(cls)
+        
+        document.addEventListener("click", closeModal)
+        
+        function closeModal(e) {
+            const elem = e.target
+            console.log(elem)
+            if (!cls.includes(elem)) {
+                return
+            }
             modal.close()
-            modal.removeEventListener("click", closeModal)
-            closeBtn.removeEventListener("click", closeModal)
+            document.removeEventListener("click", closeModal)
         }
     })
 })
