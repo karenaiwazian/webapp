@@ -162,6 +162,7 @@ dialog {
     border: none;
     min-width: 250px;
     color: var(--text-color);
+    background: var(--section-bg-color);
 }
 
 dialog div.content {
