@@ -54,3 +54,11 @@ document.querySelectorAll("button[data-modal]").forEach(button =>
         }
     })
 })
+
+let tg = window.Telegram.WebApp
+
+function changeTheme () {
+    document.body.style = `--bg-color: ${tg.bg_color}; --button-color: ${tg.button_color}`
+}
+
+tg.onEvent("themeChanged", changeTheme)
