@@ -50,6 +50,6 @@ document.querySelectorAll("button[data-modal]").forEach(button => {
 
 let tg = window.Telegram.WebApp
 tg.MainButton.show()
-tg.MainButton.onClick(() => {
-    openInvoice("https://t.me/$QzNbe_sZCUkiCgAAzw2jXh8XiKU")
-})
+tg.MainButton.onClick(openInvoice("https://t.me/$QzNbe_sZCUkiCgAAzw2jXh8XiKU"))
+Telegram.WebApp.onEvent('mainButtonClicked', openInvoice("https://t.me/$QzNbe_sZCUkiCgAAzw2jXh8XiKU"))
+    
