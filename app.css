@@ -1,5 +1,4 @@
-
-    :root{
+:root{
     --bg-color: var(--tg-theme-bg-color);
     --secondary-bg-color: var(--tg-theme-secondary-bg-color);
     --text-color: var(--tg-theme-text-color);
@@ -11,7 +10,7 @@
     --section-bg-color: var(--tg-theme-section-bg-color);
     --section-separator-color: var(--tg-theme-section-separator-color);
     --destructive-text-color: var(--tg-theme-destructive-text-color);
-    }
+}
 
 * {
     margin: 0;
@@ -24,7 +23,8 @@
 }
 
 *::backdrop {
-    background: rgba(0, 0, 0, 50%);
+    background: rgba(0,0,0,60%);
+    animation: backdrop-show .1s linear forwards;
 }
 
 body {
@@ -48,6 +48,13 @@ body {
     scroll-snap-type: x mandatory;
 }
 
+@media (width >= 500px) {
+    .diplom-preview .img-container {
+        gap: 2rem;
+        padding-inline: 20rem;
+    }
+}
+
 .diplom-preview .img-container::-webkit-scrollbar{
     display: none;
 }
@@ -62,6 +69,7 @@ body {
     animation: imanim linear;
     animation-timeline: view(x);
     scale: .8;
+    overflow: hidden;
     border-radius: .5rem;
     background-position: center;
     background-size: cover;
@@ -73,18 +81,6 @@ body {
     width: 100%;
     text-align: center;
     font-size: 16px;
-}
-
-@keyframes imanim {
-    10% {
-        scale: .8;
-    }
-    50% {
-        scale: 1;
-    }
-    90% {
-        scale: .8;
-    }
 }
 
 .btn {
@@ -139,14 +135,17 @@ section input[type="text"]:focus {
 
 .input-group {
     width: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .input-group:not(:last-child) {
     margin-bottom: 1rem;
 }
 
-.input-group button {
+.input-group button, .input-group label {
     width: 100%;
+    flex: 1;
 }
 
 select {
@@ -163,22 +162,39 @@ label {
     color: var(--text-color);
 }
 
+dialog[open] {
+    animation: dialog-show .1s linear;
+}
+
+dialog.close-modal {
+    animation: dialog-hide .1s linear forwards; 
+}
+
+dialog.close-modal::backdrop {
+    animation: backdrop-hide .1s linear forwards;
+}
+
 dialog {
-    position: relative;
     margin: auto;
     border-radius: .5rem;
+    overflow: hidden;
     border: none;
-    overflow-x: hidden;
     color: var(--text-color);
 }
 
 dialog div.content {
-    overflow-x: hidden;
+    position: relative;
     max-height: clamp(200px, 60vh, 400px);
-    width: clamp(300px, 80vw, 400px);
+    width: clamp(300px, 90vw, 400px);
     overflow-y: scroll;
-    padding: 1rem 1rem 2rem 1rem;
+    padding: 1rem 1rem 4rem 1rem;
     background: var(--section-bg-color);
+}
+
+dialog div.content div.header {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
 }
 
 dialog button {
@@ -190,7 +206,7 @@ dialog button {
     padding: .4rem .8rem;
     color: var(--accent-text-color);
     background: transparent;
-    transition: .3s;
+    transition: .2s;
 }
 
 dialog button:active {
@@ -199,4 +215,38 @@ dialog button:active {
 
 input[type="radio"] {
     accent-color: var(--accent-text-color);
-    }
+}
+
+label.my input {
+    display: none;
+}
+
+label.my {
+    flex: none;
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 5rem;
+    border: 2px solid var(--hint-color);
+    background: transparent;
+}
+
+label.my:has(input:checked) {
+    border-color: var(--accent-text-color);
+}
+
+label.my input:checked + div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 70%;
+    height: 70%;
+    translate: -50% -50%;
+    border-radius: 5rem;
+    background: var(--accent-text-color);
+}
+
+label.my+label {
+    margin-left: 1rem;
+}
