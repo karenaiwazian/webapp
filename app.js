@@ -58,7 +58,11 @@ document.querySelectorAll("button[data-modal]").forEach(button =>
 })
 
 let tg = window.Telegram.WebApp
-tg.onEvent("themeChanged", () => {
-    document.getElementById("them").innerText = "change"
+
+tg.MainButton.show()
+tg.MainButton.onClick(() => {
+    tg.shopPopup({
+        title: "Внимание",
+        message: "Вы нажали на кнопку"
+    })
 })
-document.getElementById("them").innerText = tg.colorScheme
