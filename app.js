@@ -28,40 +28,52 @@ document.querySelectorAll("div.name").forEach(name => {
 document.querySelectorAll("button[data-modal]").forEach(button => 
 {
     button.addEventListener("pointerup", (e) => 
-    {
-        document.querySelector("main").setAttribute("inert", "")
+        {
         const modalId = e.target.getAttribute("data-modal")
         const modal = document.getElementById(modalId)
         const inputs = Array.from(modal.querySelectorAll("input"))
         const closeBtn= modal.querySelector("button")
         
         modal.showModal()
-        
-        inputs.forEach(input => 
-        {
-            input.addEventListener("click", (e) =>            
-            {
+        setTimeout(() => {      
+            modal.removeAttribute("inert")
+        })              
+        inputs.forEach(input => {
+            input.addEventListener("click", (e) => {
                 button.innerText = e.target.value
                 closeModal()
             })
         })
         
         closeBtn.addEventListener("pointerup", closeModal)
+        document.addEventListener("pointerup", checkClick)
         
-        function closeModal()
-        {
-            modal.close()
-            document.querySelector("main").removeAttribute("inert")
+        function checkClick(e) {
+            if (e.target != modal) {
+                return
+            }
             closeBtn.removeEventListener("pointerup", closeModal)
+            document.removeEventListener("pointerup", checkClick)
+            closeModal()
+        }
+        
+        function closeModal() {
+            modal.classList.add("close-modal")
+            setTimeout(() => {
+                modal.close()
+                modal.setAttribute("inert", "")
+                modal.classList.remove("close-modal")
+            }, 100)
         }
     })
 })
+
 
 let tg = window.Telegram.WebApp
 
 tg.MainButton.show()
 tg.MainButton.onClick(() => {
-    tg.showPopup({
+    tg.shopPopup({
         title: "Внимание",
         message: "Вы нажали на кнопку"
     })
