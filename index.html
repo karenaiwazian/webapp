@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="animation.css">
+    <link rel="stylesheet" href="app.css">
 </head>
 <body>
     <main>
@@ -13,10 +15,10 @@
     </div>
     <section>
         <div class="input-group">
-            <button class="btn" data-modal="diptype">Тип документа</button>
+            <input type="text" name="username" placeholder="Фамилия Имя Отчество">
         </div>
         <div class="input-group">
-            <input type="text" name="username" placeholder="Фамилия Имя Отчество">
+            <button class="btn" data-modal="diptype">Тип документа</button>
         </div>
         <div class="input-group">
             <button class="btn" data-modal="nomination">Номинация</button>
@@ -25,8 +27,17 @@
             <button class="btn" data-modal="seet">Место</button>
         </div>
     </section>
+    <label class="my" for="rad">
+        <input type="radio" name="rad" id="rad">
+        <div class="round"></div>
+    </label>
+    <label class="my" for="radi">
+        <input type="radio" name="rad" id="radi">
+        <div class="round"></div>
+    </label>
     </main>
-    <dialog id="nomination">
+    
+    <dialog id="nomination" inert>
         <div class="content">
             <div class="input-group">
                 <input type="radio" id="world" name="nomination" checked>
@@ -128,60 +139,72 @@
                 <input type="radio" id="ph" name="nomination">
                 <label for="ph">Физиklast</label>
             </div>
-            <button>Отмена</button>
         </div>
+        <button>Отмена</button>
     </dialog>
     
-    <dialog id="seet">
+    <dialog id="seet" inert>
         <div class="content">
-            <div class="input-group"> 
-                <input type="radio" id="firstseet" name="seet" value="1 место" checked>
+            <div class="header">
+                Занял
+            </div>
+            <div class="input-group">
+                <label class="my" for="firstseet">
+                    <input type="radio" name="seet" id="firstseet" value="1 место">
+                    <div class="round"></div>
+                </label>
                 <label for="firstseet">1 место</label>
             </div>
             <div class="input-group">
-                <input type="radio" id="secondseet" name="seet" value="2 место">
+                <label class="my" for="firstseet">
+                    <input type="radio" name="seet" id="secondseet" value="2 место">
+                    <div class="round"></div>
+                </label>
                 <label for="secondseet">2 место</label>
             </div>
             <div class="input-group">
-                <input type="radio" id="thirdseet" name="seet" value="3 место">
+                <label class="my" for="firstseet">
+                    <input type="radio" name="seet" id="thirdseet" value="3 место">
+                    <div class="round"></div>
+                </label>
                 <label for="thirdseet">3 место</label>
             </div>
-            <button>Отмена</button>
         </div>
+        <button>Отмена</button>
     </dialog>
     
-    <dialog id="diptype">
+    <dialog id="diptype" inert>
         <div class="content">
+            <div class="header">
+                Тип документа
+            </div>
             <div class="input-group">
-                <input type="radio" name="dip" id="diplom" value="Диплом" checked>
+                <label class="my" for="diplom">
+                    <input type="radio" name="dip" id="diplom" value="Диплом">
+                    <div class="round"></div>
+                </label>
                 <label for="diplom">Диплом</label>
             </div>
             <div class="input-group">
-                <input type="radio" name="dip" id="charter" value="Грамота">
+                <label class="my" for="charter">
+                    <input type="radio" name="dip" id="charter" value="Грамота">
+                    <div class="round"></div>
+                </label>
                 <label for="charter">Грамота</label>
             </div>
             <div class="input-group">
-                <input type="radio" name="dip" id="sert" value="Сертификат">
+                <label class="my" for="sert">
+                    <input type="radio" name="dip" id="sert" value="Сертификат">
+                    <div class="round"></div>
+                </label>
                 <label for="sert">Сертификат</label>
             </div>
-            <button>Отмена</button>
         </div>
+        <button>Отмена</button>
     </dialog>
     <hr>
-    <p id="them" style="color: red; font-size: 25px;"></p>
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <script>
-        Awake()
-        function Awake() {
-            const link = document.createElement('link')
-            link.rel = 'stylesheet'
-            link.href = `app.css?v=${Math.random()}`
-            document.querySelector('head').appendChild(link)
-            const script = document.createElement('script')
-            script.src = `app.js?v=${Math.random()}`
-            document.querySelector('head').appendChild(script)
-        }
-    </script>
+    <script src="https://telegram.org/js/telegram-web-app.js" defer></script>
+    <script src="app.js" defer></script>
 </body>
-    </html>
-                    
+                    </html>
+    
