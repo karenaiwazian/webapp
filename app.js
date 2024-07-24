@@ -61,7 +61,7 @@ let tg = window.Telegram.WebApp
 
 tg.MainButton.show()
 tg.MainButton.onClick(() => {
-    tg.shopPopup({
+    tg.showPopup({
         title: "Внимание",
         message: "Вы нажали на кнопку"
     })
