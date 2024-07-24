@@ -169,6 +169,7 @@ dialog {
     border-radius: .5rem;
     border: none;
     color: var(--text-color);
+    background: var(--section-bg-color);
 }
 
 dialog div.content {
