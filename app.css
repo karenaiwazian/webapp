@@ -180,6 +180,7 @@ dialog {
     overflow: hidden;
     border: none;
     color: var(--text-color);
+    background: var(--section-bg-color);
 }
 
 dialog div.content {
