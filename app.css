@@ -170,7 +170,8 @@ dialog {
     border: none;
     overflow-x: hidden;
     color: var(--text-color);
-    background: var(--section-bg-color);
+    background: red;
+    padding: 1rem;
 }
 
 dialog div.content {
