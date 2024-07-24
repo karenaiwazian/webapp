@@ -29,6 +29,7 @@ document.querySelectorAll("button[data-modal]").forEach(button =>
 {
     button.addEventListener("pointerup", (e) => 
     {
+        document.querySelector("main").setAttribute("inert", "")
         document.body.style.overflow = "hidden"
         const modalId = e.target.getAttribute("data-modal")
         const modal = document.getElementById(modalId)
@@ -51,6 +52,7 @@ document.querySelectorAll("button[data-modal]").forEach(button =>
         function closeModal()
         {
             modal.close()
+            document.querySelector("main").removeAttribute("inert")
             document.body.style.overflow = ""
             closeBtn.removeEventListener("pointerup", closeModal)
         }
