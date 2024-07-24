@@ -168,11 +168,13 @@ dialog {
     margin: auto;
     border-radius: .5rem;
     border: none;
+    overflow-x: hidden;
     color: var(--text-color);
     background: var(--section-bg-color);
 }
 
 dialog div.content {
+    overflow-x: hidden;
     max-height: clamp(200px, 60vh, 400px);
     width: clamp(300px, 80vw, 400px);
     overflow-y: scroll;
