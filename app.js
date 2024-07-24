@@ -15,6 +15,8 @@ function createImg(url) {
 createImg("ton.png")
 createImg("ton.png")
 createImg("ton.png")
+createImg("ton.png")
+createImg("ton.png")
 
 document.querySelector("input[name='username']").addEventListener("input", (e) => {
     let text = e.target.value
@@ -23,33 +25,32 @@ document.querySelectorAll("div.name").forEach(name => {
     })
 })
 
-document.querySelectorAll("button[data-modal]").forEach(button => {
-    button.addEventListener("pointerup", (e) => {
+document.querySelectorAll("button[data-modal]").forEach(button => 
+{
+    button.addEventListener("pointerup", (e) => 
+    {
         const modalId = e.target.getAttribute("data-modal")
         const modal = document.getElementById(modalId)
+        const inputs = Array.from(modal.querySelectorAll("input"))
+        const closeBtn= modal.querySelector("button")
         
-        const closes = modal.querySelectorAll("input[type='radio'], label, button")
         modal.showModal()
-        const cls = Array.from(closes)
-        cls.push(modal)
-        console.log(cls)
         
-        document.addEventListener("pointerup", closeModal)
+        inputs.forEach(input => 
+        {
+            input.addEventListener("click", (e) =>            
+            {
+                button.innerText = e.target.value
+                closeModal()
+            })
+        })
         
-        function closeModal(e) {
-            const elem = e.target
-            console.log(elem)
-            if (!cls.includes(elem)) {
-                return
-            }
+        closeBtn.addEventListener("pointerup", closeModal)
+        
+        function closeModal()
+        {
             modal.close()
-            document.removeEventListener("pointerup", closeModal)
+            closeBtn.removeEventListener("pointerup", closeModal)
         }
     })
 })
-
-let tg = window.Telegram.WebApp
-tg.MainButton.show()
-tg.MainButton.onClick(openInvoice("https://t.me/$QzNbe_sZCUkiCgAAzw2jXh8XiKU"))
-Telegram.WebApp.onEvent('mainButtonClicked', ()=>{ alert("click")})
-    
