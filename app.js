@@ -18,7 +18,7 @@ createImg("ton.png")
 createImg("ton.png")
 createImg("ton.png")
 
-document.querySelector("input[name='username']").addEventListener("input", (e) => {
+document.querySelector("input[name='fullname']").addEventListener("input", (e) => {
     let text = e.target.value
 document.querySelectorAll("div.name").forEach(name => {
       name.innerText = text  
@@ -27,22 +27,20 @@ document.querySelectorAll("div.name").forEach(name => {
 
 document.querySelectorAll("button[data-modal]").forEach(button => 
 {
-    button.addEventListener("pointerup", (e) => 
+    button.addEventListener("pointerup", () => 
         {
-        const modalId = e.target.getAttribute("data-modal")
+        const modalId = button.getAttribute("data-modal")
         const modal = document.getElementById(modalId)
         const inputs = Array.from(modal.querySelectorAll("input"))
-        const closeBtn= modal.querySelector("button")
+        const closeBtn = modal.querySelector("button")
         
         modal.showModal()
         setTimeout(() => {      
             modal.removeAttribute("inert")
-        })              
+        })
+        const span = button.querySelectorAll("span")[1]
         inputs.forEach(input => {
-            input.addEventListener("click", (e) => {
-                button.innerText = e.target.value
-                closeModal()
-            })
+            input.addEventListener("click", updateSpan)
         })
         
         closeBtn.addEventListener("pointerup", closeModal)
@@ -63,12 +61,20 @@ document.querySelectorAll("button[data-modal]").forEach(button =>
                 modal.close()
                 modal.setAttribute("inert", "")
                 modal.classList.remove("close-modal")
+                inputs.forEach(input => {
+                input.removeEventListener("click", updateSpan);
+            });
             }, 100)
+        }
+        
+        function updateSpan(e) {
+            span.textContent = e.target.value;
+            closeModal();
         }
     })
 })
 
-
+try {
 let tg = window.Telegram.WebApp
 
 tg.MainButton.show()
@@ -78,3 +84,6 @@ tg.MainButton.onClick(() => {
         message: "Вы нажали на кнопку"
     })
 })
+
+} catch (error) {}
+                
