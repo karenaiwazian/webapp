@@ -1,4 +1,6 @@
-:root{
+
+    :root {
+    --border-radius: .6rem;
     --bg-color: var(--tg-theme-bg-color);
     --secondary-bg-color: var(--tg-theme-secondary-bg-color);
     --text-color: var(--tg-theme-text-color);
@@ -10,7 +12,7 @@
     --section-bg-color: var(--tg-theme-section-bg-color);
     --section-separator-color: var(--tg-theme-section-separator-color);
     --destructive-text-color: var(--tg-theme-destructive-text-color);
-}
+    }
 
 * {
     margin: 0;
@@ -34,8 +36,8 @@ body {
 .diplom-preview {
     width: 100%;
     overflow: hidden;
-    border-bottom-left-radius: .5rem;
-    border-bottom-right-radius: .5rem;
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
     background: var(--bg-color);
 }
 
@@ -70,7 +72,7 @@ body {
     animation-timeline: view(x);
     scale: .8;
     overflow: hidden;
-    border-radius: .5rem;
+    border-radius: var(--border-radius);
     background-position: center;
     background-size: cover;
 }
@@ -83,20 +85,12 @@ body {
     font-size: 16px;
 }
 
-.btn {
-    border: none;
-    border-radius: .6rem;
-    padding: .4rem .8rem;
-    color: var(--button-text-color);
-    background: var(--button-color);
-}
-
 a {
     color: var(--link-color);
 }
 
 hr {
-    border-color: var(--section-separator-color1);
+    border-color: var(--section-separator-color);
     margin-block: 1rem;
 }
 
@@ -108,12 +102,16 @@ hr {
     color: var(--destructive-text-color);
 }
 
+.m-1 {
+    margin: 1rem;
+}
+
 section {
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    border-radius: 1rem;
-    margin: 1rem;
-    padding: 1rem;
+    border-radius: var(--border-radius);
+    margin-block: 1rem;
     background: var(--section-bg-color);
 }
 
@@ -121,7 +119,7 @@ section input[type="text"] {
     width: 100%;
     color: var(--text-color);
     border: 1px solid;
-    border-radius: .6rem;
+    border-radius: var(--border-radius);
     padding: .4rem .8rem;
     background: transparent;
     border-color: var(--hint-color);
@@ -146,16 +144,6 @@ section input[type="text"]:focus {
 .input-group button, .input-group label {
     width: 100%;
     flex: 1;
-}
-
-select {
-    width: 100%;
-    border: 1px solid;
-    border-color: var(--hint-color);
-    border-radius: .6rem;
-    padding: .4rem .8rem;
-    background: transparent;
-    color: var(--text-color);
 }
 
 label {
@@ -189,7 +177,7 @@ dialog div.content {
     width: clamp(300px, 90vw, 400px);
     overflow-y: scroll;
     padding: 1rem 1rem 4rem 1rem;
-    background: var(--section-bg-color);
+    background: transparent;
 }
 
 dialog div.content div.header {
@@ -250,4 +238,35 @@ label.my input:checked + div {
 
 label.my+label {
     margin-left: 1rem;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+}
+.button-group button span {
+    font-size: 16px;
+}
+.button-group button {
+    display: flex;
+    justify-content: space-between;
+    border: none;
+    background: transparent;
+    padding: .6rem 1.2rem;
+    transition: .2s;
+}
+
+.button-group button:active {
+    background-color: color-mix(in srgb, var(--accent-text-color) 25%, transparent);
+}
+
+.button-group button span:last-child {
+    color: var(--accent-text-color);
+}
+
+.separator {
+    height: .5px;
+    width: calc(100% - 1rem);
+    margin-left: auto;
+    background: var(--section-separator-color);
 }
