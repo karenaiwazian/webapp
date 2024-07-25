@@ -33,7 +33,7 @@ document.querySelectorAll("button[data-modal]").forEach(button =>
         const modal = document.getElementById(modalId)
         const inputs = Array.from(modal.querySelectorAll("input"))
         const closeBtn = modal.querySelector("button")
-        
+        document.body.style.overflow = "hidden"
         modal.showModal()
         setTimeout(() => {      
             modal.removeAttribute("inert")
@@ -64,6 +64,7 @@ document.querySelectorAll("button[data-modal]").forEach(button =>
                 inputs.forEach(input => {
                 input.removeEventListener("click", updateSpan);
             });
+            document.body.style.overflow = ""
             }, 100)
         }
         
