@@ -259,7 +259,7 @@ label.my+label {
 }
 
 .button-group button:active {
-    background-color: color-mix(in srgb, var(--accent-text-color) 25%, transparent);
+    background-color: color-mix(in srgb, var(--hint-color) 25%, transparent);
 }
 
 .button-group button span:last-child {
