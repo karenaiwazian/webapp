@@ -123,7 +123,7 @@ section .header {
     color: var(--accent-text-color);
     font-size: 14px;
     font-weight: 900;
-    margin: 1rem 0 0 1rem;
+    margin: 1rem 0 .2rem 1rem;
 }
 
 .input-group {
