@@ -74,3 +74,8 @@ document.querySelectorAll("button[data-modal]").forEach(button =>
         }
     })
 })
+
+const tg = Telegram.WebApp
+
+tg.MainButton.text = "Продолжить"
+tg.MainButton.show()
