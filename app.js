@@ -80,5 +80,6 @@ const tg = Telegram.WebApp
 tg.MainButton.text = "Продолжить"
 tg.MainButton.show()
 tg.MainButton.onClick(() => {
+    tg.BackButton.show()
     location.href = "payments.html"
 })
