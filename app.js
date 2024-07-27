@@ -69,8 +69,8 @@ document.querySelectorAll("button[data-modal]").forEach(button =>
         }
         
         function updateSpan(e) {
-            span.textContent = e.target.value;
-            closeModal();
+            span.textContent = e.target.value
+            closeModal()
         }
     })
 })
@@ -79,3 +79,6 @@ const tg = Telegram.WebApp
 
 tg.MainButton.text = "Продолжить"
 tg.MainButton.show()
+tg.MainButton.onClick(() => {
+    location.href = "payments.html"
+})
