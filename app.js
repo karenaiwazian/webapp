@@ -51,9 +51,8 @@ function checkInputs() {
     const isEmpty = fullname.value.trim() == "" || institution.value.trim() == "" || locality.value.trim() == ""
     if (!isEmpty) {
         tg.MainButton.show()
-        console.log("shoe")
     } else {
-        console.log("hode")
+        tg.MainButton.hide()
     }
 }
 
