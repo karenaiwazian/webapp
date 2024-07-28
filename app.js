@@ -7,8 +7,14 @@ function createImg(url) {
     
     const name = document.createElement("div")
     name.className = "name"
+    const institution = document.createElement("div")
+    institution.className = "institution"
+    const locality = document.createElement("div")
+    locality.className = "locality"
 
     img.appendChild(name)
+    img.appendChild(institution)
+    img.appendChild(locality)
     imgContainer.appendChild(img)
 }
 
@@ -18,12 +24,38 @@ createImg("ton.png")
 createImg("ton.png")
 createImg("ton.png")
 
-document.querySelector("input[name='fullname']").addEventListener("input", (e) => {
-    let text = e.target.value
-document.querySelectorAll("div.name").forEach(name => {
-      name.innerText = text  
+const fullname = document.querySelector("input[name='fullname']")
+const institution = document.querySelector("input[name='institution']")
+const locality = document.querySelector("input[name='locality']")
+
+fullname.addEventListener("input", (e) => {
+    document.querySelectorAll("div.name").forEach(name => {
+        name.innerText = e.target.value
     })
+    checkInputs()
 })
+institution.addEventListener("input", (e) => {
+    document.querySelectorAll("div.institution").forEach(name => {
+        name.innerText = e.target.value
+    })
+    checkInputs()
+})
+locality.addEventListener("input", (e) => {
+    document.querySelectorAll("div.locality").forEach(name => {
+        name.innerText = e.target.value
+    })
+    checkInputs()
+})
+
+function checkInputs() {
+    const isEmpty = fullname.value.trim() == "" || institution.value.trim() == "" || locality.value.trim() == ""
+    if (!isEmpty) {
+        tg.MainButton.show()
+        console.log("shoe")
+    } else {
+        console.log("hode")
+    }
+}
 
 document.querySelectorAll("button[data-modal]").forEach(button => 
 {
@@ -62,9 +94,9 @@ document.querySelectorAll("button[data-modal]").forEach(button =>
                 modal.setAttribute("inert", "")
                 modal.classList.remove("close-modal")
                 inputs.forEach(input => {
-                input.removeEventListener("click", updateSpan);
-            });
-            document.body.style.overflow = ""
+                input.removeEventListener("click", updateSpan)
+            })
+                document.body.style.overflow = ""
             }, 100)
         }
         
@@ -78,7 +110,3 @@ document.querySelectorAll("button[data-modal]").forEach(button =>
 const tg = Telegram.WebApp
 
 tg.MainButton.text = "Продолжить"
-tg.MainButton.show()
-tg.MainButton.onClick(() => {
-    tg.openInvoice("https://t.me/$Ase6H8grKUlTDQAAsRnWVIiMcpA")
-})
