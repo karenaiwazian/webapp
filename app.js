@@ -3,13 +3,8 @@ const tg = Telegram.WebApp
 if (tg.platform != 'unknown')
 {
     document.documentElement.setAttribute('data-theme', tg.colorScheme)
-    tg.MainButton.onClick(opexnInvoice)
+    tg.MainButton.onClick(tg.openInvoice('https://t.me/$bBguKQzwMUILBwAARgMpmzr59iM'))
 }
-
-function opexnInvoice() {
-    tg.openInvoice('https://t.me/$bBguKQzwMUILBwAARgMpmzr59iM')
-}
-
 
 const diplomContainer = document.querySelector('.diplom-container')
 
