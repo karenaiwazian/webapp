@@ -66,11 +66,11 @@ function checkInputs()
     const isEmpty = fullname.value.trim() == '' || institution.value.trim() == '' || locality.value.trim() == ''
     if (!isEmpty)
     {
-        // tg.MainButton.show()
+        tg.MainButton.show()
     }
     else
     {
-        // tg.MainButton.hide()
+        tg.MainButton.hide()
     }
 }
 
