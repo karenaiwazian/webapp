@@ -3,7 +3,7 @@ const tg = Telegram.WebApp
 if (tg.platform != 'unknown')
 {
     document.documentElement.setAttribute('data-theme', tg.colorScheme)
-    tg.MainButton.onClick(opexnInvoice())
+    tg.MainButton.onClick(opexnInvoice)
 }
 
 function opexnInvoice() {
