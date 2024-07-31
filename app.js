@@ -3,7 +3,7 @@ const tg = window.Telegram.WebApp
 if (tg.platform != 'unknown')
 {
     document.documentElement.setAttribute('data-theme', tg.colorScheme)
-    tg.MainButton.onClick(tg.openInvoice('https://t.me/$bBguKQzwMUILBwAARgMpmzr59iM'))
+    tg.MainButton.onClick(tg.openInvoice('https://t.me/$bBguKQzwMUlLBwAARgMpmzr59iM'))
 }
 
 const diplomContainer = document.querySelector('.diplom-container')
