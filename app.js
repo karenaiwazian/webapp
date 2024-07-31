@@ -3,8 +3,8 @@ const tg = Telegram.WebApp
 if (tg.platform != 'unknown')
 {
     document.documentElement.setAttribute('data-theme', tg.colorScheme)
-    tg.MainButton.onClick(()=>{
-        tg.shareToStory('https://karenaiwazian.github.io/webapp/ton.png')
+    tg.MainButton.onClick(() => {
+        tg.openInvoice('https://t.me/$bBguKQzwMUILBwAARgMpmzr59iM')
     })
 }
 
