@@ -6,7 +6,7 @@ if (tg.platform != 'unknown')
     tg.MainButton.onClick(openInvoice())
 }
 
-openInvoice() {
+function openInvoice() {
     tg.openInvoice('https://t.me/$bBguKQzwMUILBwAARgMpmzr59iM')
 }
 
