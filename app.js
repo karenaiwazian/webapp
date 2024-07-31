@@ -3,10 +3,10 @@ const tg = Telegram.WebApp
 if (tg.platform != 'unknown')
 {
     document.documentElement.setAttribute('data-theme', tg.colorScheme)
-    tg.MainButton.onClick(openInvoice())
+    tg.MainButton.onClick(opexnInvoice())
 }
 
-function openInvoice() {
+function opexnInvoice() {
     tg.openInvoice('https://t.me/$bBguKQzwMUILBwAARgMpmzr59iM')
 }
 
