@@ -2,7 +2,7 @@ const tg = Telegram.WebApp
 
 document.documentElement.setAttribute('data-theme', tg.colorScheme)
 
-tg.MainButton.text = 'Продолжить'
+tg.MainButton.text = 'Купить за 50 ★'
 tg.onEvent('mainButtonClicked', Invoice)
 
 function FillCheck()
