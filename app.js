@@ -34,9 +34,10 @@ function CheckRadios()
 
 function Invoice()
 {
+    console.log('invoice')
     const data = {
-        later,
-        age
+        later: 'later',
+        age: 'age'
     }
     tg.sendData(JSON.stringify(data))
     console.log('send')
