@@ -1,9 +1,14 @@
 const tg = Telegram.WebApp
 
-document.documentElement.setAttribute('data-theme', tg.colorScheme)
+Start()
 
-tg.MainButton.text = 'Купить за 50 ★'
-tg.onEvent('mainButtonClicked', Invoice)
+function Start()
+{
+    document.documentElement.setAttribute('data-theme', tg.colorScheme)
+
+    tg.MainButton.text = 'ПРОДОЛЖИТЬ'
+    tg.onEvent('mainButtonClicked', Invoice)
+}
 
 function FillCheck()
 {
@@ -22,7 +27,7 @@ function CheckInputs()
 
 function CheckRadios()
 {
-    for (const name of ['level', 'seet'])
+    for (const name of ['level', 'seet', 'event', 'nomination', 'type'])
     {
         if (!document.querySelector(`input[type="radio"][name="${name}"]:checked`))
         {
@@ -34,14 +39,12 @@ function CheckRadios()
 
 function Invoice()
 {
-    console.log('invoice')
-    const data = {
-        later: 'later',
-        age: 'age'
-    }
-    tg.sendData(JSON.stringify(data))
-    console.log('send')
-    // tg.openInvoice('https://t.me/$bBguKQzwMUlLBwAARgMpmzr59iM')
+    const data = JSON.stringify({
+        fullname: fullname.value,
+        institution: institution.value,
+        locality: locality.value
+    })
+    tg.sendData(data)
 }
 
 const diplomContainer = document.querySelector('.diplom-container')
