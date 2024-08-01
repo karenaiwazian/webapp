@@ -34,6 +34,7 @@ function CheckRadios()
 
 function Invoice()
 {
+        tg.sendData('text')
     tg.openInvoice('https://t.me/$bBguKQzwMUlLBwAARgMpmzr59iM')
 }
 
