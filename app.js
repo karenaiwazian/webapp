@@ -4,9 +4,35 @@ if (tg.platform != 'unknown')
 {
     document.documentElement.setAttribute('data-theme', tg.colorScheme)
 }
-tg.onEvent('mainButtonClicked', inv)
 
-function inv() {
+tg.onEvent('mainButtonClicked', FillCheck)
+
+function FillCheck()
+{
+    if (!CheckInputs()) return
+    if (!CheckRadios()) return
+    Invoice()
+}
+
+function CheckInputs()
+{
+    return fullname.value.trim() == '' || institution.value.trim() == '' || locality.value.trim() == '' ? false : true
+}
+
+function CheckRadios()
+{
+    for (const name of ['level', 'seet'])
+    {
+        if (!document.querySelector(`input[type="radio"][name="${name}"]:checked`))
+        {
+            return false
+        }
+    }
+    return true
+}
+
+function Invoice()
+{
     tg.openInvoice('https://t.me/$bBguKQzwMUlLBwAARgMpmzr59iM')
 }
 
@@ -47,7 +73,7 @@ fullname.addEventListener('input', (e) =>
     document.querySelectorAll('div.name').forEach(name =>
         name.innerText = e.target.value
     )
-    checkInputs()
+    FillCheck()
 })
 
 institution.addEventListener("input", (e) =>
@@ -55,7 +81,7 @@ institution.addEventListener("input", (e) =>
     document.querySelectorAll('div.institution').forEach(name =>
         name.innerText = e.target.value
     )
-    checkInputs()
+    FillCheck()
 })
 
 locality.addEventListener('input', (e) =>
@@ -63,21 +89,8 @@ locality.addEventListener('input', (e) =>
     document.querySelectorAll('div.locality').forEach(name =>
         name.innerText = e.target.value
     )
-    checkInputs()
+    FillCheck()
 })
-
-function checkInputs()
-{
-    const isEmpty = fullname.value.trim() == '' || institution.value.trim() == '' || locality.value.trim() == ''
-    if (!isEmpty)
-    {
-        tg.MainButton.show()
-    }
-    else
-    {
-        tg.MainButton.hide()
-    }
-}
 
 document.querySelectorAll('button[data-modal]').forEach(button => 
 {
@@ -139,6 +152,7 @@ diplomContainer.addEventListener("wheel", (e) =>
     if (isScroll) return
 
     isScroll = true
+
     let scrolls = e.deltaY >= 0 ? diplomContainer.scrollLeft + 150 : diplomContainer.scrollLeft - 150
 
     diplomContainer.scrollTo({
