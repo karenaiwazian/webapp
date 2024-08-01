@@ -34,8 +34,12 @@ function CheckRadios()
 
 function Invoice()
 {
-        tg.sendData('text')
-    tg.openInvoice('https://t.me/$bBguKQzwMUlLBwAARgMpmzr59iM')
+    const data = {
+        later,
+        age
+    }
+    tg.sendData(JSON.stringify(data))
+    // tg.openInvoice('https://t.me/$bBguKQzwMUlLBwAARgMpmzr59iM')
 }
 
 const diplomContainer = document.querySelector('.diplom-container')
