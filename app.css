@@ -20,6 +20,10 @@
     :root {
         --section-border-radius: 1rem;
     }
+    
+    section:first-child {
+        margin-top: 1rem;
+    }
 }
 
 [data-theme="light"]:root,
