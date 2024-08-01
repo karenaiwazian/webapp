@@ -39,6 +39,7 @@ function Invoice()
         age
     }
     tg.sendData(JSON.stringify(data))
+    console.log('send')
     // tg.openInvoice('https://t.me/$bBguKQzwMUlLBwAARgMpmzr59iM')
 }
 
