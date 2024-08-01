@@ -1,17 +1,18 @@
 const tg = Telegram.WebApp
 
-if (tg.platform != 'unknown')
-{
-    document.documentElement.setAttribute('data-theme', tg.colorScheme)
-}
+document.documentElement.setAttribute('data-theme', tg.colorScheme)
 
-tg.onEvent('mainButtonClicked', FillCheck)
+tg.MainButton.text = 'Продолжить'
+tg.onEvent('mainButtonClicked', Invoice)
 
 function FillCheck()
 {
-    if (!CheckInputs()) return
-    if (!CheckRadios()) return
-    Invoice()
+    if (!CheckInputs() || !CheckRadios())
+    {
+        tg.MainButton.hide()
+        return
+    }
+    tg.MainButton.show()
 }
 
 function CheckInputs()
@@ -136,6 +137,7 @@ document.querySelectorAll('button[data-modal]').forEach(button =>
 
         function updateSpan(e)
         {
+            CheckRadios()
             span.textContent = e.target.value
             closeModal()
         }
