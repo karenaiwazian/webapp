@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <meta name="description" content="Лего и быстро получить диплом.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="description" content="Легко и быстро получить диплом.">
     <link rel="stylesheet" href="animation.css">
     <link rel="stylesheet" href="app.css">
 </head>
@@ -18,18 +18,16 @@
         <section>
             <div class="header">Заполните</div>
             <div class="input-group">
-                <input type="text" name="fullname" placeholder="Фамилия Имя Отчество" maxlength="50" autocomplete="off"
-                    spellcheck="false">
+                <input type="text" spellcheck="false" maxlength="50" autocomplete="off" name="fullname"
+                    placeholder="Фамилия Имя Отчество">
             </div>
-            <div class="separator"></div>
             <div class="input-group">
-                <input type="text" name="institution" placeholder="Название учреждения" maxlength="50"
-                    autocomplete="off" spellcheck="false">
+                <input type="text" spellcheck="false" maxlength="50" autocomplete="off" name="institution"
+                    placeholder="Название учреждения">
             </div>
-            <div class="separator"></div>
             <div class="input-group">
-                <input type="text" name="locality" placeholder="Населенный пункт" maxlength="50" autocomplete="off"
-                    spellcheck="false">
+                <input type="text" spellcheck="false" maxlength="50" autocomplete="off" name="locality"
+                    placeholder="Населенный пункт">
             </div>
         </section>
         <section>
@@ -39,185 +37,181 @@
                     <span>Тип документа</span>
                     <span></span>
                 </button>
-                <div class="separator"></div>
                 <button class="btn" data-modal="event">
                     <span>Тип мероприятия</span>
                     <span></span>
                 </button>
-                <div class="separator"></div>
                 <button class="btn" data-modal="level">
                     <span>Уровень мероприятия</span>
                     <span></span>
                 </button>
-                <div class="separator"></div>
                 <button class="btn" data-modal="nomination">
                     <span>Номинация</span>
                     <span></span>
                 </button>
-                <div class="separator"></div>
                 <button class="btn" data-modal="seet">
                     <span>Занял(а)</span>
                     <span></span>
                 </button>
             </div>
         </section>
+        <dialog id="level" inert>
+            <div class="content">
+                <div class="header">Уровень мероприятия</div>
+                <div class="label-group">
+                    <label class="radio">
+                        <input type="radio" name="level" value="Международная">
+                        <div class="round">Международная</div>
+                    </label>
+                </div>
+                <div class="label-group">
+                    <label class="radio">
+                        <input type="radio" name="level" value="Региональная">
+                        <div class="round">Региональная</div>
+                    </label>
+                </div>
+                <div class="label-group">
+                    <label class="radio">
+                        <input type="radio" name="level" value="Всероссийская">
+                        <div class="round">Всероссийская</div>
+                    </label>
+                </div>
+            </div>
+            <button>Отмена</button>
+        </dialog>
+        <dialog id="event" inert>
+            <div class="content">
+                <div class="header">Тип мероприятия</div>
+                <div class="label-group">
+                    <label class="radio">
+                        <input type="radio" name="event" value="Олимпиада">
+                        <div class="round">Олимпиада</div>
+                    </label>
+                </div>
+                <div class="label-group">
+                    <label class="radio">
+                        <input type="radio" name="event" value="Викторина">
+                        <div class="round">Викторина</div>
+                    </label>
+                </div>
+                <div class="label-group">
+                    <label class="radio">
+                        <input type="radio" name="event" value="Тестирование">
+                        <div class="round">Тестирование</div>
+                    </label>
+                </div>
+            </div>
+            <button>Отмена</button>
+        </dialog>
+        <dialog id="nomination" inert>
+            <div class="content">
+                <div class="header">Номинация</div>
+                <div class="label-group">
+                    <label class="radio">
+                        <input type="radio" name="nomination" value="Математика">
+                        <div class="round">Математика</div>
+                    </label>
+                </div>
+                <div class="label-group">
+                    <label class="radio">
+                        <input type="radio" name="nomination" value="Литература">
+                        <div class="round">Литература</div>
+                    </label>
+                </div>
+                <div class="label-group">
+                    <label class="radio">
+                        <input type="radio" name="nomination" value="Физкультура">
+                        <div class="round">Физкультура</div>
+                    </label>
+                </div>
+                <div class="label-group">
+                    <label class="radio">
+                        <input type="radio" name="nomination" value="Английсский">
+                        <div class="round">Английсский</div>
+                    </label>
+                </div>
+                <div class="label-group">
+                    <label class="radio">
+                        <input type="radio" name="nomination" value="История">
+                        <div class="round">История</div>
+                    </label>
+                </div>
+                <div class="label-group">
+                    <label class="radio">
+                        <input type="radio" name="nomination" value="Биология">
+                        <div class="round">Биология</div>
+                    </label>
+                </div>
+                <div class="label-group">
+                    <label class="radio">
+                        <input type="radio" name="nomination" value="Химия">
+                        <div class="round">Химия</div>
+                    </label>
+                </div>
+                <div class="label-group">
+                    <label class="radio">
+                        <input type="radio" name="nomination" value="Физика">
+                        <div class="round">Физика</div>
+                    </label>
+                </div>
+                <div class="label-group">
+                    <label class="radio">
+                        <input type="radio" name="nomination" value="Русский язык">
+                        <div class="round">Русский язык</div>
+                    </label>
+                </div>
+            </div>
+            <button>Отмена</button>
+        </dialog>
+        <dialog id="seet" inert>
+            <div class="content">
+                <div class="header">Занял(а)</div>
+                <div class="label-group">
+                    <label class="radio">
+                        <input type="radio" name="seet" value="1 место">
+                        <div class="round">1 место</div>
+                    </label>
+                </div>
+                <div class="label-group">
+                    <label class="radio">
+                        <input type="radio" name="seet" value="2 место">
+                        <div class="round">2 место</div>
+                    </label>
+                </div>
+                <div class="label-group">
+                    <label class="radio">
+                        <input type="radio" name="seet" value="3 место">
+                        <div class="round">3 место</div>
+                    </label>
+                </div>
+            </div>
+            <button>Отмена</button>
+        </dialog>
+        <dialog id="type" inert>
+            <div class="content">
+                <div class="header">Тип документа</div>
+                <div class="label-group">
+                    <label class="radio">
+                        <input type="radio" name="type" value="Диплом">
+                        <div class="round">Диплом</div>
+                    </label>
+                </div>
+                <div class="label-group">
+                    <label class="radio">
+                        <input type="radio" name="type" value="Грамота">
+                        <div class="round">Грамота</div>
+                    </label>
+                </div>
+                <div class="label-group">
+                    <label class="radio">
+                        <input type="radio" name="type" value="Сертификат">
+                        <div class="round">Сертификат</div>
+                    </label>
+                </div>
+            </div>
+            <button>Отмена</button>
+        </dialog>
     </main>
-    <dialog id="level" inert>
-        <div class="content">
-            <div class="header">Уровень мероприятия</div>
-            <div class="label-group">
-                <label class="radio">
-                    <input type="radio" name="level" value="Международная">
-                    <div class="round">Международная</div>
-                </label>
-            </div>
-            <div class="label-group">
-                <label class="radio">
-                    <input type="radio" name="level" value="Региональная">
-                    <div class="round">Региональная</div>
-                </label>
-            </div>
-            <div class="label-group">
-                <label class="radio">
-                    <input type="radio" name="level" value="Всероссийская">
-                    <div class="round">Всероссийская</div>
-                </label>
-            </div>
-        </div>
-        <button>Отмена</button>
-    </dialog>
-    <dialog id="event" inert>
-        <div class="content">
-            <div class="header">Тип мероприятия</div>
-            <div class="label-group">
-                <label class="radio">
-                    <input type="radio" name="event" value="Олимпиада">
-                    <div class="round">Олимпиада</div>
-                </label>
-            </div>
-            <div class="label-group">
-                <label class="radio">
-                    <input type="radio" name="event" value="Викторина">
-                    <div class="round">Викторина</div>
-                </label>
-            </div>
-            <div class="label-group">
-                <label class="radio">
-                    <input type="radio" name="event" value="Тестирование">
-                    <div class="round">Тестирование</div>
-                </label>
-            </div>
-        </div>
-        <button>Отмена</button>
-    </dialog>
-    <dialog id="nomination" inert>
-        <div class="content">
-            <div class="header">Номинация</div>
-            <div class="label-group">
-                <label class="radio">
-                    <input type="radio" name="nomination" value="Математика">
-                    <div class="round">Математика</div>
-                </label>
-            </div>
-            <div class="label-group">
-                <label class="radio">
-                    <input type="radio" name="nomination" value="Литература">
-                    <div class="round">Литература</div>
-                </label>
-            </div>
-            <div class="label-group">
-                <label class="radio">
-                    <input type="radio" name="nomination" value="Физкультура">
-                    <div class="round">Физкультура</div>
-                </label>
-            </div>
-            <div class="label-group">
-                <label class="radio">
-                    <input type="radio" name="nomination" value="Английсский">
-                    <div class="round">Английсский</div>
-                </label>
-            </div>
-            <div class="label-group">
-                <label class="radio">
-                    <input type="radio" name="nomination" value="История">
-                    <div class="round">История</div>
-                </label>
-            </div>
-            <div class="label-group">
-                <label class="radio">
-                    <input type="radio" name="nomination" value="Биология">
-                    <div class="round">Биология</div>
-                </label>
-            </div>
-            <div class="label-group">
-                <label class="radio">
-                    <input type="radio" name="nomination" value="Химия">
-                    <div class="round">Химия</div>
-                </label>
-            </div>
-            <div class="label-group">
-                <label class="radio">
-                    <input type="radio" name="nomination" value="Физика">
-                    <div class="round">Физика</div>
-                </label>
-            </div>
-            <div class="label-group">
-                <label class="radio">
-                    <input type="radio" name="nomination" value="Русский язык">
-                    <div class="round">Русский язык</div>
-                </label>
-            </div>
-        </div>
-        <button>Отмена</button>
-    </dialog>
-    <dialog id="seet" inert>
-        <div class="content">
-            <div class="header">Занял(а)</div>
-            <div class="label-group">
-                <label class="radio">
-                    <input type="radio" name="seet" value="1 место">
-                    <div class="round">1 место</div>
-                </label>
-            </div>
-            <div class="label-group">
-                <label class="radio">
-                    <input type="radio" name="seet" value="2 место">
-                    <div class="round">2 место</div>
-                </label>
-            </div>
-            <div class="label-group">
-                <label class="radio">
-                    <input type="radio" name="seet" value="3 место">
-                    <div class="round">3 место</div>
-                </label>
-            </div>
-        </div>
-        <button>Отмена</button>
-    </dialog>
-    <dialog id="type" inert>
-        <div class="content">
-            <div class="header">Тип документа</div>
-            <div class="label-group">
-                <label class="radio">
-                    <input type="radio" name="type" value="Диплом">
-                    <div class="round">Диплом</div>
-                </label>
-            </div>
-            <div class="label-group">
-                <label class="radio">
-                    <input type="radio" name="type" value="Грамота">
-                    <div class="round">Грамота</div>
-                </label>
-            </div>
-            <div class="label-group">
-                <label class="radio">
-                    <input type="radio" name="type" value="Сертификат">
-                    <div class="round">Сертификат</div>
-                </label>
-            </div>
-        </div>
-        <button>Отмена</button>
-    </dialog>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script src="app.js" defer></script>
 </body>
