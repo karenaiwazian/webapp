@@ -8,6 +8,7 @@ function Start()
 
     tg.MainButton.text = 'ПРОДОЛЖИТЬ'
     tg.onEvent('mainButtonClicked', Invoice)
+    ChangeTheme()
 }
 
 tg.onEvent('themeChanged', ChangeTheme)
@@ -19,7 +20,7 @@ function ChangeTheme()
     {
         if (Object.hasOwnProperty.call(object, key))
         {
-            document.documentElement.style += `--${key}: ${object[key]}; `
+            document.documentElement.style.setProperty(`--${key}`, `${object[key]}`)
         }
     }
 }
