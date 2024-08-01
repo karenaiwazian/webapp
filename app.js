@@ -137,7 +137,7 @@ document.querySelectorAll('button[data-modal]').forEach(button =>
 
         function updateSpan(e)
         {
-            CheckRadios()
+            FillCheck()
             span.textContent = e.target.value
             closeModal()
         }
