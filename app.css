@@ -10,7 +10,6 @@
     --button-text-color: lightblue;
     --accent-text-color: blue;
     --section-bg-color: white;
-    --section-separator-color: gray;
     --destructive-text-color: red;
     --border-radius: .4rem;
     --modal-border-radius: .6rem;
@@ -35,7 +34,6 @@
     --button-text-color: var(--tg-theme-button-text-color);
     --accent-text-color: var(--tg-theme-accent-text-color);
     --section-bg-color: var(--tg-theme-section-bg-color);
-    --section-separator-color: var(--tg-theme-section-separator-color);
     --destructive-text-color: var(--tg-theme-destructive-text-color);
 }
 
@@ -62,6 +60,10 @@
 
 *::-webkit-scrollbar {
     display: none;
+}
+
+html {
+    scrollbar-gutter: stable;
 }
 
 body {
@@ -273,14 +275,6 @@ dialog .input-group:not(:last-child) {
 
 .button-group button span:last-child {
     color: var(--accent-text-color);
-}
-
-.separator {
-    height: .1px;
-    opacity: 0.5;
-    margin-left: auto;
-    width: calc(100% - 1.5rem);
-    background: var(--section-separator-color);
 }
 
 .radio {
