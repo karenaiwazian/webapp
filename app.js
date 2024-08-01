@@ -11,20 +11,6 @@ function Start()
     ChangeTheme()
 }
 
-tg.onEvent('themeChanged', ChangeTheme)
-
-function ChangeTheme()
-{
-    let object = tg.themeParams
-    for (const key in object)
-    {
-        if (Object.hasOwnProperty.call(object, key))
-        {
-            document.documentElement.style.setProperty(`--${key}`, `${object[key]}`)
-        }
-    }
-}
-
 function FillCheck()
 {
     if (!CheckInputs() || !CheckRadios())
