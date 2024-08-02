@@ -239,7 +239,7 @@ dialog button {
 
 }
 
-@media (hover:hover) {
+@media (hover: hover) {
     dialog button:hover {
         background-color: color-mix(in srgb, var(--accent-text-color) 15%, transparent);
     }
@@ -263,7 +263,7 @@ dialog .input-group:not(:last-child) {
     transition: .1s;
 }
 
-@media (hover:hover) {
+@media (hover: hover) {
     .button-group button:hover {
         background-color: color-mix(in srgb, var(--hint-color) 15%, transparent);
     }
