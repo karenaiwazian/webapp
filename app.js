@@ -1,5 +1,6 @@
 const tg = Telegram.WebApp
 
+tg.ready()
 tg.MainButton.text = 'ПРОДОЛЖИТЬ'
 tg.onEvent('mainButtonClicked', SendData)
 
