@@ -1,12 +1,7 @@
 const tg = Telegram.WebApp
 
-Start()
-
-function Start()
-{
-    tg.MainButton.text = 'ПРОДОЛЖИТЬ'
-    tg.onEvent('mainButtonClicked', Invoice)
-}
+tg.MainButton.text = 'ПРОДОЛЖИТЬ'
+tg.onEvent('mainButtonClicked', SendData)
 
 function FillCheck()
 {
@@ -20,7 +15,11 @@ function FillCheck()
 
 function CheckInputs()
 {
-    return fullname.value.trim() == '' || institution.value.trim() == '' || locality.value.trim() == '' ? false : true
+    if (GetInput('fullname').trim() == '' || GetInput('institution').trim() == '' || GetInput('locality').trim() == '')
+    {
+        return false
+    }
+    return true
 }
 
 function CheckRadios()
@@ -35,37 +34,29 @@ function CheckRadios()
     return true
 }
 
-function Invoice()
+function SendData()
 {
     const data = JSON.stringify({
-        fullname: fullname.value,
-        institution: institution.value,
-        locality: locality.value
+        fullname: GetInput('fullname'),
+        institution: GetInput('institution'),
+        locality: GetInput('locality'),
+        level: GetRadio('level'),
+        event: GetRadio('event'),
+        seet: GetRadio('seet'),
+        type: GetRadio('type'),
     })
     tg.sendData(data)
 }
 
-function createImg(diplom)
+function GetInput(name)
 {
-    let name = document.createElement('div')
-    name.className = 'name'
-
-    let institution = document.createElement('div')
-    institution.className = 'institution'
-
-    let locality = document.createElement('div')
-    locality.className = 'locality'
-
-    diplom.appendChild(name)
-    diplom.appendChild(institution)
-    diplom.appendChild(locality)
+    return document.querySelector(`input[type="text"][name="${name}"]`).value
 }
 
-const diploms = document.querySelectorAll('.diplom')
-diploms.forEach(diplom =>
+function GetRadio(name)
 {
-    createImg(diplom);
-})
+    return document.querySelector(`input[type="radio"][name="${name}"]:checked`).value
+}
 
 const fullname = document.querySelector("input[name='fullname']")
 const institution = document.querySelector("input[name='institution']")
@@ -110,21 +101,28 @@ document.querySelectorAll('button[data-modal]').forEach(button =>
         modal.showModal()
         modal.removeAttribute('inert')
 
-        inputs.forEach(input => input.addEventListener('click', updateSpan))
+        inputs.forEach(input => input.addEventListener('click', UpdateSpan))
 
-        closeBtn.addEventListener('pointerup', closeModal)
-        document.addEventListener('pointerup', checkClick)
+        closeBtn.addEventListener('pointerup', CloseModal)
+        document.addEventListener('pointerup', CheckClick)
 
-        function checkClick(e)
+        function CheckClick(e)
         {
             if (e.target != modal) return
 
-            closeBtn.removeEventListener('pointerup', closeModal)
-            document.removeEventListener('pointerup', checkClick)
-            closeModal()
+            closeBtn.removeEventListener('pointerup', CloseModal)
+            document.removeEventListener('pointerup', CheckClick)
+            CloseModal()
         }
 
-        function closeModal()
+        function UpdateSpan(e)
+        {
+            FillCheck()
+            span.textContent = e.target.value
+            CloseModal()
+        }
+
+        function CloseModal()
         {
             modal.classList.add('close-modal')
             setTimeout(() =>
@@ -132,23 +130,16 @@ document.querySelectorAll('button[data-modal]').forEach(button =>
                 modal.close()
                 modal.setAttribute('inert', '')
                 modal.classList.remove('close-modal')
-                inputs.forEach(input => input.removeEventListener('click', updateSpan))
+                inputs.forEach(input => input.removeEventListener('click', UpdateSpan))
                 document.body.style.overflow = ''
             }, 100)
-        }
-
-        function updateSpan(e)
-        {
-            FillCheck()
-            span.textContent = e.target.value
-            closeModal()
         }
     })
 })
 
 let isScroll = false
-const diplomContainer = document.querySelector('.diplom-container')
-diplomContainer.addEventListener("wheel", (e) =>
+const DiplomContainer = document.querySelector('.diplom-container')
+DiplomContainer.addEventListener("wheel", (e) =>
 {
     if (e.ctrlKey) return
 
@@ -158,9 +149,9 @@ diplomContainer.addEventListener("wheel", (e) =>
 
     isScroll = true
 
-    let scrolls = e.deltaY >= 0 ? diplomContainer.scrollLeft + 150 : diplomContainer.scrollLeft - 150
+    let scrolls = e.deltaY >= 0 ? DiplomContainer.scrollLeft + 150 : DiplomContainer.scrollLeft - 150
 
-    diplomContainer.scrollTo({
+    DiplomContainer.scrollTo({
         top: 0,
         left: scrolls,
         behavior: 'smooth'
