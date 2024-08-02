@@ -4,7 +4,6 @@ Start()
 
 function Start()
 {
-    document.documentElement.setAttribute('data-theme', tg.colorScheme)
     tg.MainButton.text = 'ПРОДОЛЖИТЬ'
     tg.onEvent('mainButtonClicked', Invoice)
 }
@@ -46,14 +45,8 @@ function Invoice()
     tg.sendData(data)
 }
 
-const diplomContainer = document.querySelector('.diplom-container')
-
-function createImg(url)
+function createImg(diplom)
 {
-    let img = document.createElement('div')
-    img.className = 'img'
-    img.style.backgroundImage = `url('${url}')`
-
     let name = document.createElement('div')
     name.className = 'name'
 
@@ -63,16 +56,16 @@ function createImg(url)
     let locality = document.createElement('div')
     locality.className = 'locality'
 
-    img.appendChild(name)
-    img.appendChild(institution)
-    img.appendChild(locality)
-    diplomContainer.appendChild(img)
+    diplom.appendChild(name)
+    diplom.appendChild(institution)
+    diplom.appendChild(locality)
 }
 
-for (let index = 0; index < 5; index++)
+const diploms = document.querySelectorAll('.diplom')
+diploms.forEach(diplom =>
 {
-    createImg('ton.png')
-}
+    createImg(diplom);
+})
 
 const fullname = document.querySelector("input[name='fullname']")
 const institution = document.querySelector("input[name='institution']")
@@ -154,6 +147,7 @@ document.querySelectorAll('button[data-modal]').forEach(button =>
 })
 
 let isScroll = false
+const diplomContainer = document.querySelector('.diplom-container')
 diplomContainer.addEventListener("wheel", (e) =>
 {
     if (e.ctrlKey) return
