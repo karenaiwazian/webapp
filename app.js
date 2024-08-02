@@ -5,10 +5,8 @@ Start()
 function Start()
 {
     document.documentElement.setAttribute('data-theme', tg.colorScheme)
-
     tg.MainButton.text = 'ПРОДОЛЖИТЬ'
     tg.onEvent('mainButtonClicked', Invoice)
-    ChangeTheme()
 }
 
 function FillCheck()
