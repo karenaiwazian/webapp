@@ -1,33 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 :root {
-    --bg-color: white;
-    --secondary-bg-color: gray;
-    --text-color: black;
-    --hint-color: gray;
-    --link-color: blue;
-    --button-color: blue;
-    --button-text-color: lightblue;
-    --accent-text-color: blue;
-    --section-bg-color: white;
-    --destructive-text-color: red;
-    --border-radius: .4rem;
-    --modal-border-radius: .6rem;
-    --section-border-radius: 0;
-}
-
-@media screen and (width >=500px) {
-    :root {
-        --section-border-radius: 1rem;
-    }
-    
-    section:first-child {
-        margin-top: 1rem;
-    }
-}
-
-[data-theme="light"]:root,
-[data-theme="dark"]:root {
     --border-radius: .4rem;
     --bg-color: var(--tg-theme-bg-color);
     --secondary-bg-color: var(--tg-theme-secondary-bg-color);
@@ -39,6 +12,16 @@
     --accent-text-color: var(--tg-theme-accent-text-color);
     --section-bg-color: var(--tg-theme-section-bg-color);
     --destructive-text-color: var(--tg-theme-destructive-text-color);
+}
+
+@media screen and (width >=500px) {
+    :root {
+        --section-border-radius: 1rem;
+    }
+
+    section:first-child {
+        margin-top: 1rem;
+    }
 }
 
 * {
@@ -87,7 +70,7 @@ main {
     scroll-snap-type: x mandatory;
 }
 
-.diplom-container div.img {
+.diplom-container div.diplom {
     position: relative;
     width: 250px;
     height: 350px;
@@ -99,52 +82,52 @@ main {
     scale: .8;
     overflow: hidden;
     border-radius: var(--border-radius);
-    background-position: center;
-    background-size: cover;
 }
 
-.diplom-container div.img:first-child {
+.diplom-container div.diplom img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    scroll-snap-type: x mandatory;
+}
+
+.diplom-container div.diplom:first-child {
     margin-left: 5rem;
 }
 
-.diplom-container div.img:last-child {
+.diplom-container div.diplom:last-child {
     margin-right: 5rem;
 }
 
-@media screen and (width >=400px) {
-    .diplom-container div.img:first-child {
+@media (width >=400px) {
+    .diplom-container div.diplom:first-child {
         margin-left: 10rem;
     }
 
-    .diplom-container div.img:last-child {
+    .diplom-container div.diplom:last-child {
         margin-right: 10rem;
     }
 }
 
-.diplom-container div.img div.name,
-.diplom-container div.img div.institution,
-.diplom-container div.img div.locality {
+.diplom-container div.diplom div.name,
+.diplom-container div.diplom div.institution,
+.diplom-container div.diplom div.locality {
     position: absolute;
     width: 100%;
     font-size: 1rem;
     text-align: center;
 }
 
-.diplom-container div.img div.name {
+.diplom-container div.diplom div.name {
     top: 10%;
 }
 
-.diplom-container div.img div.institution {
+.diplom-container div.diplom div.institution {
     top: 20%;
 }
 
-.diplom-container div.img div.locality {
+.diplom-container div.diplom div.locality {
     top: 30%;
-}
-
-a {
-    color: var(--link-color);
-    cursor: pointer;
 }
 
 button {
@@ -153,10 +136,6 @@ button {
 
 .hint {
     color: var(--hint-color);
-}
-
-.destructive-text-color {
-    color: var(--destructive-text-color);
 }
 
 section {
@@ -283,10 +262,10 @@ dialog .input-group:not(:last-child) {
 
 .radio {
     display: block;
+    cursor: pointer;
     position: relative;
     padding-left: 3rem;
     line-height: 1.5rem;
-    cursor: pointer;
     transition: .1s linear;
 }
 
