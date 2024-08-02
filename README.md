@@ -1,2 +1,2 @@
 # webapp
-Telegram Bot <a href='WebAppGitHubBot.t.me'>WebAppGitHubBot.t.me</a>
+<a href='WebAppGitHubBot.t.me'>Telegram Bot</a>
