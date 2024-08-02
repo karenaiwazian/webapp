@@ -70,7 +70,7 @@ fullname.addEventListener('input', (e) =>
     FillCheck()
 })
 
-institution.addEventListener("input", (e) =>
+institution.addEventListener('input', (e) =>
 {
     document.querySelectorAll('div.institution').forEach(name =>
         name.innerText = e.target.value
